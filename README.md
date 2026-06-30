@@ -1,16 +1,16 @@
-#Glimpaxe Momento — Landing Page
+# Glimpaxe Momento — Landing Page
 
 A full landing page built for **Glimpaxe Momento**, a Lagos-based business specializing in premium, customized event souvenirs and corporate gifts.
 
 🔗 Live site: afodunrinbikunmi-data.github.io/glimpaxe-landing-page
 
-**##About the project**
+## **About the project**
 
 This was built as client/freelance work to give Glimpaxe Momento a professional web presence showcasing their gift packages, brand credibility, and a direct path to inquiries via WhatsApp.
 
 The page was developed from a UI design brief and translated into responsive, semantic HTML and CSS — matching the client's brand colors, typography, and layout precisely.
 
-**##Sections**
+## **Sections**
 
 
 - **Header** — sticky navigation with brand logo and WhatsApp CTA
@@ -23,7 +23,7 @@ The page was developed from a UI design brief and translated into responsive, se
 - **Footer** — quick links, product categories, contact details, and newsletter signup
 
 
-**##Tech stack**
+## **Tech stack**
 
 
 - HTML5
@@ -34,7 +34,7 @@ The page was developed from a UI design brief and translated into responsive, se
 
 No build tools, frameworks, or dependencies — a single self-contained, fast-loading static page.
 
-**##Features##
+## **Features**
 
 
 - Fully responsive across desktop, tablet, and mobile
@@ -43,7 +43,7 @@ No build tools, frameworks, or dependencies — a single self-contained, fast-lo
 - Lightweight — no external JS libraries
 
 
-**##Project structure**
+## **Project structure**
 
 ```text
 glimpaxe-landing-page/
@@ -54,7 +54,7 @@ glimpaxe-landing-page/
     └── promo-2.jpg
 ```
 
-#Running locally
+# Running locally
 
 Clone the repo and open index.html directly in a browser — no server or build step required.
 
