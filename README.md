@@ -56,7 +56,7 @@ glimpaxe-landing-page/
 
 # Running locally
 
-Clone the repo and open index.html directly in a browser — no server or build step required.
+**Clone the repo and open index.html directly in a browser — no server or build step required.**
 
 Built with care for Glimpaxe Momento — premium souvenirs for memorable moments.
 
