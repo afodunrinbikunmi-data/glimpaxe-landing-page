@@ -44,3 +44,20 @@ No build tools, frameworks, or dependencies — a single self-contained, fast-lo
 
 
 **##Project structure**
+
+```text
+glimpaxe-landing-page/
+├── index.html
+└── images/
+    ├── logo.jpg
+    ├── promo-1.jpg
+    └── promo-2.jpg
+```
+
+#Running locally
+
+Clone the repo and open index.html directly in a browser — no server or build step required.
+
+
+
+
