@@ -2,7 +2,7 @@
 
 A full landing page built for **Glimpaxe Momento**, an Abeokuta based business specializing in premium, customized event souvenirs and corporate gifts.
 
-🔗 [Live site](https/afodunrinbikunmi-data.github.io/glimpaxe-landing-page): afodunrinbikunmi-data.github.io/glimpaxe-landing-page
+🔗 [Live site](https://afodunrinbikunmi-data.github.io/glimpaxe-landing-page): afodunrinbikunmi-data.github.io/glimpaxe-landing-page
 
 ## **About the project**
 
