@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glimpaxe Momento | Premium Souvenirs For Memorable Moments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8740C;
+    --orange-light: #F4901A;
+    --cream: #FBE9D8;
+    --cream-light: #FDF1E6;
+    --black: #161513;
+    --black-soft: #1E1C19;
+    --text-dark: #1F1B16;
+    --text-gray: #6B6661;
+    --white: #FFFFFF;
+    --border-soft: #EFE6DA;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--orange);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* ===================== HEADER ===================== */
+  .site-header {
+    background: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    height: 40px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .main-nav a {
+    color: #E8E4DC;
+    font-size: 14.5px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .main-nav a.active {
+    color: var(--orange);
+  }
+
+  .main-nav a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: var(--orange);
+  }
+
+  .btn-whatsapp-nav {
+    background: var(--orange);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .btn-whatsapp-nav:hover { background: var(--orange-light); }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+  }
+
+  .nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+  }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    background: linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 60%, var(--white) 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 64px 0 56px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    background: #FBDDBB;
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 7px 16px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .hero-title .accent { color: var(--orange); display: block; }
+
+  .hero-copy {
+    font-size: 16px;
+    color: var(--text-gray);
+    max-width: 440px;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 14px 26px;
+    border-radius: 28px;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+
+  .btn-primary {
+    background: var(--orange);
+    color: var(--white);
+    box-shadow: 0 8px 18px rgba(232, 116, 12, 0.28);
+  }
+
+  .btn-primary:hover { background: #D8680A; }
+
+  .btn-outline {
+    background: var(--white);
+    color: var(--text-dark);
+    border: 1px solid #E3DACB;
+  }
+
+  .btn-outline:hover { border-color: var(--orange); }
+
+  .hero-trust {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .trust-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #FBDDBB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--orange);
+  }
+
+  .trust-item span { line-height: 1.25; }
+
+  /* Hero visual stack */
+  .hero-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .promo-card {
+    background: var(--white);
+    border-radius: 14px;
+    box-shadow: 0 20px 45px rgba(40, 30, 15, 0.12);
+    overflow: hidden;
+  }
+
+  .promo-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ===================== STATS BAR ===================== */
+  .stats-bar {
+    background: var(--black);
+    border-radius: 16px;
+    margin: 0 auto -1px;
+    max-width: 1200px;
+    padding: 28px 36px;
+    position: relative;
+    z-index: 3;
+    transform: translateY(-38px);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .stat-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(232, 116, 12, 0.16);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--orange);
+    line-height: 1.1;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    color: #D8D3C9;
+    font-weight: 500;
+  }
+
+  /* ===================== WHY CHOOSE US ===================== */
+  .why-section {
+    padding: 90px 0 70px;
+    text-align: center;
+  }
+
+  .section-eyebrow {
+    color: var(--orange);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 48px;
+  }
+
+  .section-title .accent { color: var(--orange); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .why-card {
+    background: var(--cream-light);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 32px 22px;
+    text-align: center;
+  }
+
+  .why-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+
+  .why-card h3 {
+    font-size: 16.5px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+
+  .why-card p {
+    font-size: 13.5px;
+    color: var(--text-gray);
+    line-height: 1.6;
+  }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testimonials-section {
+    padding: 10px 0 90px;
+    text-align: center;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 48px;
+  }
+
+  .testimonial-card {
+    background: var(--cream-light);
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    padding: 28px 26px;
+    text-align: left;
+  }
+
+  .stars {
+    color: var(--orange);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .testimonial-quote {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    min-height: 66px;
+  }
+
+  .testimonial-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #E9DFD0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  .person-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .person-role {
+    font-size: 12px;
+    color: var(--text-gray);
+  }
+
+  /* ===================== CTA BANNER ===================== */
+  .cta-banner {
+    background: linear-gradient(100deg, var(--orange) 0%, var(--orange-light) 100%);
+    border-radius: 18px;
+    margin: 0 auto 90px;
+    max-width: 1200px;
+    padding: 34px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .cta-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .cta-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+
+  .cta-left h3 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .cta-left p {
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.92);
+  }
+
+  .btn-cta-white {
+    background: var(--white);
+    color: var(--text-dark);
+    padding: 14px 28px;
+    border-radius: 28px;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    white-space: nowrap;
+    transition: transform 0.15s ease;
+  }
+
+  .btn-cta-white:hover { transform: translateY(-1px); }
+
+  /* ===================== FOOTER ===================== */
+  .site-footer {
+    background: var(--black);
+    color: #C9C4BA;
+    padding: 64px 0 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.1fr 1.1fr;
+    gap: 28px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-brand p {
+    font-size: 13.5px;
+    color: #9D988E;
+    margin: 18px 0 22px;
+    line-height: 1.6;
+    max-width: 230px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .footer-social a:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+
+  .footer-col h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 11px;
+    font-size: 13.5px;
+    color: #ADA89E;
+  }
+
+  .footer-col ul li a:hover { color: var(--orange); }
+
+  .footer-col ul li::before {
+    content: '•';
+    color: var(--orange);
+    margin-right: 7px;
+  }
+
+  .contact-col ul li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .contact-col ul li::before { content: none; }
+
+  .contact-col ul li svg { flex-shrink: 0; color: var(--orange); }
+
+  .newsletter-col p {
+    font-size: 13px;
+    color: #9D988E;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .newsletter-form {
+    display: flex;
+    gap: 8px;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 11px 12px;
+    color: var(--white);
+    font-size: 13px;
+  }
+
+  .newsletter-form input::placeholder { color: #87827A; }
+
+  .newsletter-form button {
+    background: var(--orange);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 18px;
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .newsletter-form button:hover { background: var(--orange-light); }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 22px 0;
+    font-size: 12.5px;
+    color: #847F76;
+  }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 980px) {
+    .main-nav { display: none; }
+    .nav-toggle { display: flex; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visuals { order: -1; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonial-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 26px; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 600px) {
+    .hero-title { font-size: 34px; }
+    .stats-bar { transform: translateY(-26px); padding: 24px 20px; }
+    .why-grid { grid-template-columns: 1fr; }
+    .cta-banner { flex-direction: column; text-align: center; align-items: stretch; }
+    .cta-left { flex-direction: column; text-align: center; }
+    .btn-cta-white { justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <img src="images/logo.jpg" alt="Glimpaxe Momento" class="logo-mark">
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#" class="active">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/2348135200799" class="btn-whatsapp-nav">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.3-1.5-1.8-2.4-.1-.2 0-.4.1-.5.2-.2.5-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 1.8 2.8 4.4 3.9 2.1.9 2.8.7 3.3.6.6-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.2-.1-.4-.2z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.7 0-3.3-.5-4.7-1.3l-.3-.2-3.1.8.8-3-.2-.3C3.6 14.7 3 13.4 3 12c0-5 4-9 9-9s9 4 9 9-4 9.3-9 9.3z"/></svg>
+      Chat on WhatsApp
+    </a>
+    <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="eyebrow">Premium Souvenirs For Memorable Moments</span>
+      <h1 class="hero-title">
+        Customized Gifts<br>
+        That Celebrate<br>
+        <span class="accent">Every Moment</span>
+      </h1>
+      <p class="hero-copy">From weddings to corporate events, we create premium, customized souvenirs that leave a lasting impression on your guests.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          View Our Products
+        </a>
+        <a href="https://wa.me/2348135200799" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9.34 13.66 7 23l5-3 5 3-2.34-9.34"/></svg>
+          </span>
+          <span>Trusted by<br>Event Planners</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+          </span>
+          <span>Fully<br>Customized</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </span>
+          <span>Nationwide<br>Delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visuals">
+      <!-- Promo Card 1: full designed poster supplied by client -->
+      <div class="promo-card">
+        <img src="images/promo-1.jpg" alt="Glimpaxe Momento customized event gifts: keyring, pen, card holder, bottle and notebook in a branded gift box" class="promo-poster">
+      </div>
+
+      <!-- Promo Card 2: full designed poster supplied by client -->
+      <div class="promo-card">
+        <img src="images/promo-2.jpg" alt="Glimpaxe Momento customized souvenir packages: backpack, polo shirt, bottles, notebooks, mugs and bags" class="promo-poster">
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <div><div class="stat-number">500+</div><div class="stat-label">Successful Events</div></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9" y2="9"/><line x1="15" y1="9" x2="15" y2="9"/></svg></span>
+        <div><div class="stat-number">1000+</div><div class="stat-label">Happy Clients</div></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+        <div><div class="stat-number">100%</div><div class="stat-label">Custom Designs</div></div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>
+        <div><div class="stat-number">Nationwide</div><div class="stat-label">Delivery</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY CHOOSE US ===================== -->
+<section class="why-section container" id="why-us">
+  <p class="section-eyebrow">Why Choose Us</p>
+  <h2 class="section-title">Why Choose Glimpaxe Momento?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9.34 13.66 7 23l5-3 5 3-2.34-9.34"/></svg></span>
+      <h3>Premium Quality</h3>
+      <p>We use high-quality materials and premium finishing to ensure every detail is perfect.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+      <h3>Fully Customized</h3>
+      <p>Your event is unique, and so are our souvenirs. Customize everything to match your theme.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+      <h3>On-Time Delivery</h3>
+      <p>We value your time. Expect prompt production and reliable nationwide delivery.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></span>
+      <h3>Dedicated Support</h3>
+      <p>Our team is always ready to guide you and bring your vision to life seamlessly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials-section container">
+  <h2 class="section-title">What Our <span class="accent">Clients</span> Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-quote">Glimpaxe Momento made our wedding unforgettable. The souvenirs were beautiful and our guests loved them!</p>
+      <div class="testimonial-person">
+        <span class="avatar">T&amp;A</span>
+        <div><div class="person-name">Temilola &amp; Akin</div><div class="person-role">Wedding Clients</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-quote">The corporate gift packs were exceptional! Great quality, on-time delivery and excellent customer service.</p>
+      <div class="testimonial-person">
+        <span class="avatar">BM</span>
+        <div><div class="person-name">Bola Martins</div><div class="person-role">HR Manager</div></div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-quote">Highly recommend! Their attention to detail and finishing is top-notch.</p>
+      <div class="testimonial-person">
+        <span class="avatar">CN</span>
+        <div><div class="person-name">Chioma Nwosu</div><div class="person-role">Event Planner</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER ===================== -->
+<div class="cta-banner" id="contact">
+  <div class="cta-left">
+    <span class="cta-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></span>
+    <div>
+      <h3>Let's Create Something Memorable Together</h3>
+      <p>Tell us about your event and we'll recommend the perfect souvenir package for you.</p>
+    </div>
+  </div>
+  <a href="https://wa.me/2348135200799" class="btn-cta-white">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.3-1.5-1.8-2.4-.1-.2 0-.4.1-.5.2-.2.5-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 1.8 2.8 4.4 3.9 2.1.9 2.8.7 3.3.6.6-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.2-.1-.4-.2z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+    Chat on WhatsApp
+  </a>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="images/logo.jpg" alt="Glimpaxe Momento" class="logo-mark">
+        </div>
+        <p>Creating memorable moments through beautifully crafted souvenirs.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/glimpaxemomento_souvenir?igsh=Z3I5M21pdmU2ZHZl" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://www.tiktok.com/@glimpaxemomento_souvenir?_r=1&_t=ZS-97LZPpW0tzI" target="_blank" rel="noopener" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61579740960223&mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li><a href="#">Event Gifts</a></li>
+          <li><a href="#">Corporate Gifts</a></li>
+          <li><a href="#">Wedding Souvenirs</a></li>
+          <li><a href="#">Branded Items</a></li>
+          <li><a href="#">Gift Packages</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1-.2.2-.3.2-.6.1-.9-.4-1.8-1-2.6-1.8-.7-.7-1.3-1.5-1.8-2.4-.1-.2 0-.4.1-.5.2-.2.5-.5.6-.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 1.8 2.8 4.4 3.9 2.1.9 2.8.7 3.3.6.6-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.2-1.2-.1-.1-.2-.1-.4-.2z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.6 1.4 5.1L2 22l5-1.3c1.5.8 3.2 1.3 5 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg> <a href="tel:+2348140881261">08140881261</a></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="https://wa.me/2348135200799" target="_blank" rel="noopener">08135200799</a></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 6-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> <a href="mailto:reachus@glimpaxemomento.com">reachus@glimpaxemomento.com</a></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Lagos, Nigeria</li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4>Newsletter</h4>
+        <p>Subscribe for updates and exclusive offers.</p>
+        <form class="newsletter-form" onsubmit="return false;">
+          <label for="newsletter-email" style="position:absolute;left:-9999px;">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2025 Glimpaxe Momento Souvenir. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle (simple show/hide for the primary nav on small screens)
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mainNav.style.display === 'flex';
+    mainNav.style.display = isOpen ? 'none' : 'flex';
+    mainNav.style.flexDirection = 'column';
+    mainNav.style.position = 'absolute';
+    mainNav.style.top = '64px';
+    mainNav.style.left = '0';
+    mainNav.style.right = '0';
+    mainNav.style.background = '#161513';
+    mainNav.style.padding = '20px 24px';
+    mainNav.style.gap = '16px';
+  });
+</script>
+
+</body>
+</html>
